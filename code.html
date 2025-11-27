@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 Chat en Tiempo Real</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header del Chat -->
+        <header class="chat-header">
+            <div class="header-content">
+                <h1>💬 Chat en Tiempo Real</h1>
+                <div class="status-indicator">
+                    <span id="status" class="status-offline">🔴 Desconectado</span>
+                    <span id="user-count" class="user-count">0 usuarios</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Modal de Bienvenida -->
+        <div id="welcome-modal" class="modal">
+            <div class="modal-content">
+                <h2>🎉 ¡Bienvenido al Chat!</h2>
+                <p>Ingresa tu nombre para comenzar a chatear</p>
+                <input type="text" id="username-input" placeholder="Tu nombre..." maxlength="20">
+                <button id="join-chat" class="btn-primary">Unirse al Chat</button>
+            </div>
+        </div>
+
+        <!-- Área Principal del Chat -->
+        <div class="chat-main" style="display: none;">
+            <!-- Panel de Usuarios -->
+            <aside class="users-panel">
+                <h3>👥 Usuarios Conectados</h3>
+                <div id="users-list" class="users-list">
+                    <div class="user-item">
+                        <span class="user-avatar">👤</span>
+                        <span class="user-name">Tú</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Área de Mensajes -->
+            <main class="messages-area">
+                <div id="messages-container" class="messages-container">
+                    <div class="system-message">
+                        <div class="message-content">
+                            <span class="message-text">
+                                💫 Bienvenido al chat en tiempo real. Los mensajes se sincronizan instantáneamente.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input de Mensajes -->
+                <div class="message-input-container">
+                    <div class="input-group">
+                        <input type="text" id="message-input" 
+                               placeholder="Escribe un mensaje..." 
+                               maxlength="500"
+                               disabled>
+                        <button id="send-button" class="btn-send" disabled>
+                            📤 Enviar
+                        </button>
+                    </div>
+                    <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                        <span id="typing-text"></span>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Notificaciones -->
+        <div id="notifications" class="notifications"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
